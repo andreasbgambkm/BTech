@@ -1,0 +1,20 @@
+{
+  "login": [
+    {
+      "nik"     : "1",
+      "username": "user1",
+      "password": "password1",
+      "name"    : "Andreas",
+      "position": "Mandor Panen",
+      "division": "Divisi 1"
+    },
+    {
+      "nik"     : "2",
+      "username": "user2",
+      "password": "password2",
+      "name"    : "Riyan",
+      "position": "Krani Panen",
+      "division": "Divisi 2"
+    }
+  ]
+}
