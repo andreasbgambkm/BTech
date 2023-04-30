@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:BTechAppLatihan/core/utils/color_pallete.dart';
 import 'package:BTechAppLatihan/cubit/login/logincubit.dart';
 import 'package:BTechAppLatihan/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 class LoginForm extends StatefulWidget {
+  static String routeName = "/login";
   const LoginForm({Key? key}) : super(key: key);
 
   @override
@@ -116,11 +118,19 @@ class _LoginFormState extends State<LoginForm> {
                           ..showSnackBar(
                             const SnackBar(content: Text('Login Success')),
                           );
-                      } else if (state.error.isNotEmpty) {
+                      }else if (state.error.isNotEmpty) {
                         ScaffoldMessenger.of(context)
                           ..hideCurrentSnackBar()
                           ..showSnackBar(
                             SnackBar(content: Text(state.error)),
+                          );
+                      }
+
+                      else if (state.error.isEmpty) {
+                        ScaffoldMessenger.of(context)
+                          ..hideCurrentSnackBar()
+                          ..showSnackBar(
+                            SnackBar(content: Text('Password Atau Username Tidak Boleh Kosong')),
                           );
                       }
                     },
@@ -180,8 +190,13 @@ class _LoginFormState extends State<LoginForm> {
                                SizedBox(height: MediaQuery.of(context).size.height * 0.02,),
                               BgaButton(
                                 text: 'Login',
+
                                 onPressed: state.isLoading ? null : _onLoginButtonPressed,
-                              ),
+                                backgroundColor: BgaColor.bgaOrange,
+
+                                ),
+
+
 
                               // ElevatedButton(
                               //   onPressed: state.isLoading ? null : _onLoginButtonPressed,

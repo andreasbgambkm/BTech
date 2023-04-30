@@ -1,7 +1,6 @@
 
 import 'package:BTechAppLatihan/core/utils/color_pallete.dart';
 import 'package:BTechAppLatihan/core/utils/theme/app_decoration.dart';
-import 'package:BTechAppLatihan/models/login_model.dart';
 import 'package:BTechAppLatihan/widgets/custom_icon.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -82,7 +81,7 @@ class HomeHeader extends StatelessWidget {
                         height: 24,
                       ),
                       onPressed: () {
-                        // Aksi yang akan dilakukan ketika tombol ditekan
+                        Scaffold.of(context).openDrawer();
                       },
                     ),
                   ),

@@ -19,7 +19,7 @@ class LoginCubit extends Cubit<LoginState> {
     emit(state.copyWith(isLoading: true));
 
     try {
-      final jsonString = await rootBundle.loadString('assets/login_data.json');
+      final jsonString = await rootBundle.loadString('assets/data/login_data.json');
       final jsonMap = json.decode(jsonString);
 
       final loginModel = LoginModel.fromJson(jsonMap);

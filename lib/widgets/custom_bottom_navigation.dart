@@ -492,3 +492,5 @@ class _BubbleBottomBarClipper extends CustomClipper<Path> {
         oldClipper.notchMargin != notchMargin;
   }
 }
+
+

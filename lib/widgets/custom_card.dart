@@ -2,6 +2,8 @@ import 'package:BTechAppLatihan/core/utils/color_pallete.dart';
 import 'package:flutter/material.dart';
 
 
+
+
 class CustomCardGps extends StatelessWidget {
   final String title;
   final String subtitle;
@@ -10,6 +12,7 @@ class CustomCardGps extends StatelessWidget {
   final double? height;
   final String? weather;
   final IconData iconWeather;
+
 
 
   const CustomCardGps({
@@ -82,7 +85,7 @@ class CustomCardRkh extends StatelessWidget {
                 title,
                 style: const TextStyle(
                     fontFamily: 'Poppins',
-                    fontSize: 16,
+                    fontSize: 14,
                     fontWeight: FontWeight.bold),
               ),
               const Spacer(),
@@ -95,7 +98,7 @@ class CustomCardRkh extends StatelessWidget {
                   style: TextStyle(
                     decoration: TextDecoration.underline,
                     color: BgaColor.bgaBlack90001,
-                    fontSize: 15,
+                    fontSize: 12,
                   ),
                 ),
               ),
@@ -133,7 +136,7 @@ class CustomCardRkh extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(
-                          width: 10,
+                          width: 20,
                         ),
                         Text(
                           item,
@@ -173,11 +176,13 @@ class CustomCardRkh extends StatelessWidget {
 }
 
 class CustomCardMenu extends StatelessWidget {
+
+
   final String title;
   final int counter;
   final double? width;
   final double? height;
-
+  final String? route;
 
 
   const CustomCardMenu({
@@ -186,6 +191,7 @@ class CustomCardMenu extends StatelessWidget {
     required this.counter,
     this.width =156,
     this.height = 84,
+    this.route,
 
   }) : super(key: key);
 
@@ -195,7 +201,6 @@ class CustomCardMenu extends StatelessWidget {
       width: width,
       height: height,
       child: Card(
-
         elevation: 2,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
@@ -216,7 +221,7 @@ class CustomCardMenu extends StatelessWidget {
           ),
 
           onTap: () {
-            // Aksi yang akan dilakukan ketika card ditekan
+            Navigator.pushNamed(context,'$route');
           },
         ),
       ),
